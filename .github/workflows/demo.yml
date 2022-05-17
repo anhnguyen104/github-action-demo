@@ -12,9 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - name: Install node env
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
 
       - uses: microsoft/playwright-github-action@v1
 
       - name: Install dependencies and run tests
-        run: npm install && npx playwright test
+        run: npm install && npx playwright install && npx playwright test

@@ -17,8 +17,11 @@ jobs:
           with:
             node-version: 14
 
-        - name: Run unitTest
+        - name: Run Unit Test
           run: echo "Execute unitTest"
+
+        - name: Unit test running
+          run: timeout /t 15
         
         - run: echo "Complete unitTest"
           

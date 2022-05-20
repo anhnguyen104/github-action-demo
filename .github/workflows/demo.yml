@@ -21,7 +21,7 @@ jobs:
           run: echo "Execute unitTest"
 
         - name: Unit test running
-          run: timeout /t 15
+          run: sleep 15
         
         - run: echo "Complete unitTest"
           

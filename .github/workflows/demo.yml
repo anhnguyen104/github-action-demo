@@ -6,9 +6,25 @@ on:
       - main
 
 jobs:
-  e2e-tests:
-    runs-on: ubuntu-latest # or macos-latest, windows-latest
+  unit-tests:
+      runs-on: ubuntu-latest # or macos-latest, windows-latest
 
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: Install node env
+          uses: actions/setup-node@v1
+          with:
+            node-version: 14
+
+        - name: Run unitTest
+          run: echo "Execute unitTest"
+        
+        - run: echo "Complete unitTest"
+          
+  e2e-tests:
+    runs-on: ubuntu-latest 
+    
     steps:
       - uses: actions/checkout@v2
 
